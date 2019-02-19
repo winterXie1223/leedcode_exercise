@@ -66,7 +66,7 @@ public class solution {
     
     
     
-    public static int removeDuplicates(int[] nums) {   //移除重复元素
+    public static int removeDuplicates(int[] nums) {   //移除重复元素，要求不额外开数组且提供O（1）的额外内存
     	Hashtable number = new Hashtable();
     	int k = 0;
     	int leng = nums.length;
@@ -88,6 +88,24 @@ public class solution {
         
     }
     
+    public int removeElement(int[] nums, int val) {
+        int i=0;
+        int j=0;
+        int count=0;
+        while(j<nums.length)
+        {
+        	if(nums[j]!=val)
+        	{
+        		nums[i]=nums[j];
+        		i++;
+        		count++;
+        	}
+        
+        	j++;
+        }
+    
+		return count;
+    }
     
     public static void main(String[] args)
     {
